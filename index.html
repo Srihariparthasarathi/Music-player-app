@@ -1,0 +1,93 @@
+<!-- OM NAMASIVAYA -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bd5f5088d8.js" crossorigin="anonymous"></script>
+</head>
+<body data-theme = "light">
+    <header>
+        <div class="headerItem"></div>
+        <div class="headerItem heading">
+            <h1>Music player</h1>
+        </div>
+        <div class="headerItem toggle">
+            <input type="checkbox" name="togglbr" id="togglebr">
+            <label for="togglebr"></label>
+        </div>
+    </header>
+
+    <main>
+        <div id="mainContainer">
+            <div class="mainItem filter songSection">
+                <div class="serAndFilContainer">
+            
+                    <div class="serAndFilItem" id="serSongArtist">
+                        <form id="searchForm">
+                            <input type="text" placeholder="artist or song">
+                            <button>search</button>
+                        </form>
+                    </div>
+
+                    <div class="serAndFilItem" id="fil">
+                        <form>
+                            <label for="genre">Filter By Gerner</label>
+                            <select name="genre" id="genreSel">
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                    <h2>All Soungs</h2>
+                    <div id="filContainer"></div>
+            </div>
+            <div class="mainItem display songCard">
+                <div class="songCardItem card">
+                    <div class="cardItems" id="imgCard">
+                        
+                    </div>
+                    <div class="cardItems" id="detCard">
+                        <h2>song name</h2>
+                        <p>artiset name</p>
+                    </div>
+
+                </div>
+                <div class="songCardItem controler">
+                    <div class="controlItem musicPlayer">
+                        <audio controls></audio>
+                    </div>
+                    <div class="controlItem playConContainer">
+                        <div class="playConItem" ></div>
+                        <div class="playConItem" id="conBtnBox">
+                            <button id="backBtn"><i class="fa-solid fa-backward"></i></button>
+                            <button id="frontBtn"><i class="fa-solid fa-forward"></i></button>
+                        </div>
+                        <div class="playConItem" id="addPlyLisBtnBox">
+                            <button id="addItmPlis"><i class="fa-solid fa-square-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainItem createPlayList">
+                <form id="createPlayListForm">
+                    <input type="text" placeholder="new play name">
+                    <button type="submit">Create playlist </button>
+                </form>
+            </div>
+            <div class="mainItem playListSec">
+                <h2>Current PlayList</h2>
+                <div id="plyLisContainer">
+                    <div id="curPlayLisContainer"></div>
+                    <h3>PlayLists</h3>
+                    <div id="allPlayListContainer"></div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

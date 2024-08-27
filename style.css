@@ -1,0 +1,453 @@
+/* OM NAMASIVAYA */
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;   
+    height: 15vh;
+}
+
+.headerItem{
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    margin: 0px;
+}
+
+.heading{
+    text-align: center;
+}
+
+.toggle input{
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+
+}
+
+.toggle label{
+    position: relative;
+    height: 30px;
+    width: 60px;
+    border-radius: 30px;
+    
+    
+}
+
+.toggle label::before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    left: 0px;
+}
+
+.toggle input:checked + label::before{
+    left: 30px;
+
+}
+
+/* .toggle input:checked + label {
+
+} */
+
+main{
+    margin-top: 20px;
+    width: 100%;
+    height: 70vh;
+}
+
+#mainContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 15vh 55vh;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.mainItem{
+    margin: .5rem;
+    border-radius: 5px;
+}
+
+.songSection{
+    grid-area: 1/1/3/2;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 22% 15%;
+}
+
+.songSection .serAndFilContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+
+.display{
+    grid-area: 1/2/3/3;
+}
+.createPlayList{
+    grid-area: 1/3/2/4;
+}
+
+.songSection h2{
+    margin: 0.5rem;
+    text-align: center;
+}
+
+#filContainer, #curPlayLisContainer, #allPlayListContainer{
+   overflow: scroll;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: .5rem;
+   padding: 0.5rem;
+}
+#filContainer::-webkit-scrollbar, #curPlayLisContainer::-webkit-scrollbar,
+#allPlayListContainer::-webkit-scrollbar{
+    display: none;
+  }
+
+.filItems, .curPlSong, .allPlyListItem{
+    width: 80%;
+    padding: 0.25rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    display: grid;
+    grid-template-columns: 5fr 1fr; 
+}
+
+.filItems p, .curPlSong p, .allPlyListItem p{
+    margin: 0px;
+}
+
+.delItem:hover,
+.delPlItem:hover,
+.delAlPlItem:hover{
+    color: #C7253E;
+}
+
+
+.filItems:hover, .curPlSong:hover, .allPlyListItem:hover{
+    transform: scale(1.05);
+}
+
+.songCard{
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70% 25%;
+    align-content: space-between;
+}
+
+.songCardItem{
+    padding: .5rem;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 70% 25%;
+    align-content: space-between;
+  
+}
+
+.cardItems{
+    border-radius: 5px;
+}
+
+
+#imgCard img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;  
+}
+
+#detCard h2, #detCard p{
+    margin: 0.25rem 0px 0px 0.5rem;
+}
+
+.createPlayList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.createPlayList form input, .createPlayList form button, #serSongArtist form input, #serSongArtist form button{
+    padding: .25rem;
+    border-radius: 5px;
+}
+
+.playListSec{
+    display: grid;
+    grid-template-rows: 15%;
+    overflow: hidden;
+}
+
+.playListSec h2{
+    margin: .25rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#plyLisContainer{
+    height: 95%;
+}
+
+#curPlayLisContainer{
+    max-height: 25%;
+}
+
+#plyLisContainer h3{
+    text-align: center;
+    margin:0.5rem;
+}
+
+#allPlayListContainer{
+    max-height: 25%;
+}
+
+.controler{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    padding: 0.25rem;
+}
+
+.controler button{
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    padding: 0.25rem 1rem;
+}
+
+.controler button:hover{
+    scale: 0.9;
+}
+
+
+
+.musicPlayer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.musicPlayer audio{
+    height: 90%;
+    width: 90%;
+}
+
+.playConContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: space-around;
+    align-content: center;
+    
+}
+
+.playConItem{
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* theme */
+body[data-theme = "dark"]{
+    background-color: #1E201E;  
+}
+
+body[data-theme = "dark"] .heading{
+    color: #ECDFCC;
+}
+
+body[data-theme = "dark"] .toggle label{
+    background-color: #3C3D37;
+}
+
+body[data-theme = "dark"] .toggle label::before{
+    background-color: #697565;
+}
+
+body[data-theme = "dark"] .mainItem{
+    background-color: #3C3D37;
+}
+
+body[data-theme = "dark"] .songSection{
+    color: #ECDFCC;
+}
+
+body[data-theme = "dark"] .filItems, body[data-theme = "dark"] .curPlSong{
+    background-color: #ECDFCC;
+    color: #1E201E;
+    box-shadow: 5px 5px 10px #1E201E;
+}
+
+body[data-theme = "dark"] .allPlyListItem{
+    color: #ECDFCC;
+    background-color: #1E201E;
+    box-shadow: 3px 3px 6px #697565;
+}
+
+body[data-theme = "dark"] .filItems:hover, body[data-theme = "dark"] .curPlSong:hover{
+    background-color: #1E201E;
+    color: #ECDFCC;
+    box-shadow: #697565;
+}
+
+body[data-theme = "dark"] .songCardItem{
+    background-color: #ECDFCC;
+    box-shadow: 5px 5px 10px #1E201E;
+
+}
+
+body[data-theme = "dark"] #detCard h2{
+    color: #ECDFCC;
+}
+
+body[data-theme = "dark"] #detCard p{
+    color: #697565;
+}
+
+body[data-theme = "dark"] input::placeholder{
+    color: #697565;
+    font-weight: 500;
+  }
+
+body[data-theme = "dark"] form button{
+    font-weight: 700;
+    color: #1E201E;
+    background-color: #ECDFCC;
+
+}
+
+body[data-theme = "dark"] form button:hover{
+    font-weight: 700;
+    color: #ECDFCC;
+    background-color: #1E201E;
+
+}
+
+body[data-theme = "dark"] h2, body[data-theme = "dark"] h3{
+    color: #ECDFCC;
+}
+
+body[data-theme = "dark"] .cardItems{
+    background-color: #3C3D37;
+    box-shadow: 5px 5px 10px #3C3D37;
+}
+
+
+body[data-theme = "dark"] .controler{
+    background-color: #1E201E;
+
+}
+body[data-theme = "dark"] .controler button{
+    background-color: #697565;
+    color: #ECDFCC;
+
+}
+
+
+/* light */
+
+body[data-theme = "light"]{
+    background-color: #FFFBF5;  
+}
+
+body[data-theme = "light"] .heading{
+    color: #7743DB;
+}
+
+body[data-theme = "light"] .toggle label{
+    background-color: #C3ACD0;
+}
+
+body[data-theme = "light"] .toggle label::before{
+    background-color: #7743DB;
+}
+
+body[data-theme = "light"] .mainItem{
+    background-color: #F7EFE5;
+}
+
+body[data-theme = "light"] .songSection{
+    color: #7743DB;
+}
+
+body[data-theme = "light"] .filItems, body[data-theme = "light"] .curPlSong{
+    background-color: #C3ACD0;
+    color: #7743DB;
+    box-shadow: 5px 5px 10px #C3ACD0;
+}
+
+body[data-theme = "light"] .allPlyListItem{
+    color: #FFFBF5;
+    background-color: #7743DB;
+    box-shadow: 3px 3px 6px #C3ACD0;
+}
+
+body[data-theme = "light"] .filItems:hover, body[data-theme = "dark"] .curPlSong:hover{
+    background-color: #7743DB;
+    color: #FFFBF5;
+    box-shadow: #C3ACD0;
+}
+
+body[data-theme = "light"] .songCardItem{
+    background-color: #F7EFE5;
+    box-shadow: 5px 5px 10px #C3ACD0;
+
+}
+
+body[data-theme = "light"] #detCard h2{
+    color: #C3ACD0;
+}
+
+body[data-theme = "light"] #detCard p{
+    color: #C3ACD0;
+}
+
+body[data-theme = "light"] input::placeholder{
+    color: #C3ACD0;
+    font-weight: 500;
+  }
+
+body[data-theme = "light"] form button{
+    font-weight: 700;
+    color: #7743DB;
+    background-color: #C3ACD0;
+
+}
+
+body[data-theme = "light"] form button:hover{
+    font-weight: 700;
+    color: #C3ACD0;
+    background-color: #7743DB;
+
+}
+
+body[data-theme = "light"] h2, body[data-theme = "light"] h3{
+    color: #7743DB;
+}
+
+body[data-theme = "light"] .cardItems{
+    background-color: #FFFBF5;
+    box-shadow: 5px 5px 10px #7743DB;
+}
+
+body[data-theme = "light"] .controler{
+    background-color: #FFFBF5;
+
+}
+body[data-theme = "light"] .controler button{
+    background-color: #C3ACD0;
+    color: #7743DB;
+
+}
